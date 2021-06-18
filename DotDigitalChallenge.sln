@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotDigitalChallenge", "DotDigitalChallenge\DotDigitalChallenge.csproj", "{74A791BA-803E-4BD4-BD63-E912AA29A114}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitTest.DotDigitalChallenge", "NUnitTest.DotDigitalChallenge\NUnitTest.DotDigitalChallenge.csproj", "{6793D74B-0FC5-45F7-824B-5AE4469ED7C6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74A791BA-803E-4BD4-BD63-E912AA29A114}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74A791BA-803E-4BD4-BD63-E912AA29A114}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74A791BA-803E-4BD4-BD63-E912AA29A114}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74A791BA-803E-4BD4-BD63-E912AA29A114}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6793D74B-0FC5-45F7-824B-5AE4469ED7C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6793D74B-0FC5-45F7-824B-5AE4469ED7C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6793D74B-0FC5-45F7-824B-5AE4469ED7C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6793D74B-0FC5-45F7-824B-5AE4469ED7C6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {74979176-8D94-4835-8AA2-222059DC25EB}
+	EndGlobalSection
+EndGlobal
