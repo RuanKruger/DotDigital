@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DxVoblvP8uTnUU6zvl0oBoHA1IEjPWsR65MCsvuSgBP/fzeAYT5+Rarb75OpMBesnU9NffMdQmTN120axfnXdw==",
+  "dgSpecHash": "4PH/HfTjIimEqbkO+spJeBMDl/83PthYn0xwZc5tO5VHRCNTwgB9/wS6wQ86TrXEnGqYpod/LvJzPsxQgxP93Q==",
   "success": true,
-  "projectFilePath": "G:\\Local Work\\DotDigital\\DotDigitalChallenge\\DotDigital\\DotDigitalChallenge\\DotDigitalChallenge.csproj",
+  "projectFilePath": "G:\\Local Work\\DotDigital\\DotDigitalChallenge\\DotDigital\\DotDigitalChallenge.DataAccessLayer\\DotDigitalChallenge.DataAccessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rkrug\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\rkrug\\.nuget\\packages\\microsoft.extensions.configuration.binder\\5.0.0\\microsoft.extensions.configuration.binder.5.0.0.nupkg.sha512",

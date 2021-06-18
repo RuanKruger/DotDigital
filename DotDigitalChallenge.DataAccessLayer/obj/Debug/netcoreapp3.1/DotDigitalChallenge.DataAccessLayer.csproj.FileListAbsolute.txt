@@ -1,0 +1,4 @@
+G:\Local Work\DotDigital\DotDigitalChallenge\DotDigital\DotDigitalChallenge.DataAccessLayer\bin\Debug\netcoreapp3.1\DotDigitalChallenge.Common.dll
+G:\Local Work\DotDigital\DotDigitalChallenge\DotDigital\DotDigitalChallenge.DataAccessLayer\obj\Debug\netcoreapp3.1\DotDigitalChallenge.DataAccessLayer.csprojAssemblyReference.cache
+G:\Local Work\DotDigital\DotDigitalChallenge\DotDigital\DotDigitalChallenge.DataAccessLayer\obj\Debug\netcoreapp3.1\DotDigitalChallenge.DataAccessLayer.AssemblyInfoInputs.cache
+G:\Local Work\DotDigital\DotDigitalChallenge\DotDigital\DotDigitalChallenge.DataAccessLayer\obj\Debug\netcoreapp3.1\DotDigitalChallenge.DataAccessLayer.AssemblyInfo.cs

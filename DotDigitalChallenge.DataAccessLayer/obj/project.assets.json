@@ -190,22 +190,6 @@
         "runtime": {
           "bin/placeholder/DotDigitalChallenge.Common.dll": {}
         }
-      },
-      "DotDigitalChallenge.DataAccessLayer/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "DotDigitalChallenge.Common": "1.0.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "5.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "5.0.0",
-          "System.Configuration.ConfigurationManager": "5.0.0"
-        },
-        "compile": {
-          "bin/placeholder/DotDigitalChallenge.DataAccessLayer.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DotDigitalChallenge.DataAccessLayer.dll": {}
-        }
       }
     }
   },
@@ -590,17 +574,14 @@
       "type": "project",
       "path": "../DotDigitalChallenge.Common/DotDigitalChallenge.Common.csproj",
       "msbuildProject": "../DotDigitalChallenge.Common/DotDigitalChallenge.Common.csproj"
-    },
-    "DotDigitalChallenge.DataAccessLayer/1.0.0": {
-      "type": "project",
-      "path": "../DotDigitalChallenge.DataAccessLayer/DotDigitalChallenge.DataAccessLayer.csproj",
-      "msbuildProject": "../DotDigitalChallenge.DataAccessLayer/DotDigitalChallenge.DataAccessLayer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "DotDigitalChallenge.Common >= 1.0.0",
-      "DotDigitalChallenge.DataAccessLayer >= 1.0.0"
+      "Microsoft.Extensions.Configuration.Abstractions >= 5.0.0",
+      "Microsoft.Extensions.Configuration.Binder >= 5.0.0",
+      "System.Configuration.ConfigurationManager >= 5.0.0"
     ]
   },
   "packageFolders": {
@@ -610,11 +591,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Local Work\\DotDigital\\DotDigitalChallenge\\DotDigital\\DotDigitalChallenge\\DotDigitalChallenge.csproj",
-      "projectName": "DotDigitalChallenge",
-      "projectPath": "G:\\Local Work\\DotDigital\\DotDigitalChallenge\\DotDigital\\DotDigitalChallenge\\DotDigitalChallenge.csproj",
+      "projectUniqueName": "G:\\Local Work\\DotDigital\\DotDigitalChallenge\\DotDigital\\DotDigitalChallenge.DataAccessLayer\\DotDigitalChallenge.DataAccessLayer.csproj",
+      "projectName": "DotDigitalChallenge.DataAccessLayer",
+      "projectPath": "G:\\Local Work\\DotDigital\\DotDigitalChallenge\\DotDigital\\DotDigitalChallenge.DataAccessLayer\\DotDigitalChallenge.DataAccessLayer.csproj",
       "packagesPath": "C:\\Users\\rkrug\\.nuget\\packages\\",
-      "outputPath": "G:\\Local Work\\DotDigital\\DotDigitalChallenge\\DotDigital\\DotDigitalChallenge\\obj\\",
+      "outputPath": "G:\\Local Work\\DotDigital\\DotDigitalChallenge\\DotDigital\\DotDigitalChallenge.DataAccessLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -636,9 +617,6 @@
           "projectReferences": {
             "G:\\Local Work\\DotDigital\\DotDigitalChallenge\\DotDigital\\DotDigitalChallenge.Common\\DotDigitalChallenge.Common.csproj": {
               "projectPath": "G:\\Local Work\\DotDigital\\DotDigitalChallenge\\DotDigital\\DotDigitalChallenge.Common\\DotDigitalChallenge.Common.csproj"
-            },
-            "G:\\Local Work\\DotDigital\\DotDigitalChallenge\\DotDigital\\DotDigitalChallenge.DataAccessLayer\\DotDigitalChallenge.DataAccessLayer.csproj": {
-              "projectPath": "G:\\Local Work\\DotDigital\\DotDigitalChallenge\\DotDigital\\DotDigitalChallenge.DataAccessLayer\\DotDigitalChallenge.DataAccessLayer.csproj"
             }
           }
         }
@@ -651,6 +629,20 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": {
+            "target": "Package",
+            "version": "[5.0.0, )"
+          },
+          "Microsoft.Extensions.Configuration.Binder": {
+            "target": "Package",
+            "version": "[5.0.0, )"
+          },
+          "System.Configuration.ConfigurationManager": {
+            "target": "Package",
+            "version": "[5.0.0, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -662,9 +654,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

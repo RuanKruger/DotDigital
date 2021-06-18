@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotDigitalChallenge", "DotDigitalChallenge\DotDigitalChallenge.csproj", "{74A791BA-803E-4BD4-BD63-E912AA29A114}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotDigitalChallenge", "DotDigitalChallenge\DotDigitalChallenge.csproj", "{74A791BA-803E-4BD4-BD63-E912AA29A114}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitTest.DotDigitalChallenge", "NUnitTest.DotDigitalChallenge\NUnitTest.DotDigitalChallenge.csproj", "{6793D74B-0FC5-45F7-824B-5AE4469ED7C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnitTest.DotDigitalChallenge", "NUnitTest.DotDigitalChallenge\NUnitTest.DotDigitalChallenge.csproj", "{6793D74B-0FC5-45F7-824B-5AE4469ED7C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotDigitalChallenge.DataAccessLayer", "DotDigitalChallenge.DataAccessLayer\DotDigitalChallenge.DataAccessLayer.csproj", "{5E434898-7030-4440-9D62-DAAC6482834C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotDigitalChallenge.Common", "DotDigitalChallenge.Common\DotDigitalChallenge.Common.csproj", "{4B1A7B27-1C57-481F-A78F-96074C652160}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{6793D74B-0FC5-45F7-824B-5AE4469ED7C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6793D74B-0FC5-45F7-824B-5AE4469ED7C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6793D74B-0FC5-45F7-824B-5AE4469ED7C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E434898-7030-4440-9D62-DAAC6482834C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E434898-7030-4440-9D62-DAAC6482834C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E434898-7030-4440-9D62-DAAC6482834C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E434898-7030-4440-9D62-DAAC6482834C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B1A7B27-1C57-481F-A78F-96074C652160}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B1A7B27-1C57-481F-A78F-96074C652160}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B1A7B27-1C57-481F-A78F-96074C652160}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B1A7B27-1C57-481F-A78F-96074C652160}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
