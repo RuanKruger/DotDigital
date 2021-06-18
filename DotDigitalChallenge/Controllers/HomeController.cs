@@ -27,9 +27,9 @@ namespace DotDigitalChallenge.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateContacts()
+        public IActionResult CreateContacts(string filePath)
         {
-            _Contacts.BulkCreate(@"G:\Local Work\DotDigital\Excel Files\BulkUpload.csv");
+            var bulkAdd = _Contacts.BulkCreate(filePath);
 
             // return Updated model with successfull upload
             return View("Index");
