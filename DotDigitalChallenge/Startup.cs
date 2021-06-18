@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DotDigitalChallenge.DataAccessLayer.Repositories;
 using DotDigitalChallenge.DataAccessLayer.Repositories.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -26,7 +27,8 @@ namespace DotDigitalChallenge
         {
             services.AddControllersWithViews();
 
-            services.AddTransient<ICampaigns>();
+            //services.AddTransient<ICampaigns>(campaign => new Campaigns(Configuration));
+            services.AddTransient<IContacts>(contact => new Contacts(Configuration));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

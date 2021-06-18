@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DotDigitalChallenge.Common\DotDigitalChallenge.Common.csproj" />
+    <ProjectReference Include="..\DotDigitalChallenge.DataAccessLayer\DotDigitalChallenge.DataAccessLayer.csproj" />
+  </ItemGroup>
+
 </Project>

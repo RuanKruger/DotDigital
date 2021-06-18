@@ -7,7 +7,7 @@ namespace DotDigitalChallenge.DataAccessLayer.Repositories
 {
     public class Campaigns : ICampaigns
     {
-        public string GetCampaignById(Guid Id)
+        public string CreateCampaign()
         {
             return "GotTheJobOffer";
         }

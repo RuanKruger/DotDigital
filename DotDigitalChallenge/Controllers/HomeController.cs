@@ -13,12 +13,12 @@ namespace DotDigitalChallenge.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly ICampaigns _Campaigns;
+        private readonly IContacts _Contacts;
 
-        public HomeController(ILogger<HomeController> logger, ICampaigns campaigns)
+        public HomeController(ILogger<HomeController> logger, IContacts contacts)
         {
-            _Campaigns = campaigns;
             _logger = logger;
+            _Contacts = contacts;
         }
 
         public IActionResult Index()
@@ -29,7 +29,7 @@ namespace DotDigitalChallenge.Controllers
         [HttpPost]
         public void CreateContacts()
         {
-            //_Campaigns.GetCampaignById();
+            _Contacts.BulkCreate("c/asdasd");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
