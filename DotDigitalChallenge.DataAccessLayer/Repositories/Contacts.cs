@@ -47,6 +47,11 @@ namespace DotDigitalChallenge.DataAccessLayer.Repositories
                 var credentials = Encoding.ASCII.GetBytes($"{UserName}:{Password}");
                 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(credentials));
                 var result = httpClient.PostAsync(Endpoint, multipartFormDataContent).Result;
+
+                if (result.StatusCode == System.Net.HttpStatusCode.Accepted)
+                {
+                    return true;
+                }
             }
 
             return false;
