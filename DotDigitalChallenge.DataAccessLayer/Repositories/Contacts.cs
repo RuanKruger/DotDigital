@@ -2,6 +2,7 @@
 using DotDigitalChallenge.DataAccessLayer.Models;
 using DotDigitalChallenge.DataAccessLayer.Repositories.Interfaces;
 using Microsoft.Extensions.Configuration;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,7 +19,8 @@ namespace DotDigitalChallenge.DataAccessLayer.Repositories
         private readonly string UserName;
         private readonly string Password;
         private readonly string BaseUrl;
-        private readonly string Endpoint;
+        private readonly string CreateBulkEndpoint;
+        private readonly string GetAllContactsEndpoint;
 
         public Contacts(IConfiguration config)
         {
@@ -26,7 +28,8 @@ namespace DotDigitalChallenge.DataAccessLayer.Repositories
             UserName = _config.GetValue<string>(Constants.AppSettings.Username);
             Password = _config.GetValue<string>(Constants.AppSettings.Password);
             BaseUrl = _config.GetValue<string>(Constants.AppSettings.BaseUrl);
-            Endpoint = Constants.Contacts.CreateBulk;
+            CreateBulkEndpoint = Constants.Contacts.CreateBulk;
+            GetAllContactsEndpoint = Constants.Contacts.GetAll;
         }
 
         public bool BulkCreate(string csvFilePath)
@@ -46,7 +49,7 @@ namespace DotDigitalChallenge.DataAccessLayer.Repositories
                 httpClient.BaseAddress = new Uri($"{BaseUrl}");
                 var credentials = Encoding.ASCII.GetBytes($"{UserName}:{Password}");
                 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(credentials));
-                var result = httpClient.PostAsync(Endpoint, multipartFormDataContent).Result;
+                var result = httpClient.PostAsync(CreateBulkEndpoint, multipartFormDataContent).Result;
 
                 if (result.StatusCode == System.Net.HttpStatusCode.Accepted)
                 {
@@ -57,12 +60,23 @@ namespace DotDigitalChallenge.DataAccessLayer.Repositories
             return false;
         }
 
-        public Contact Create()
+        public List<Contact> GetAllContacts()
         {
-            throw new NotImplementedException();
+            var client = new RestClient($"{BaseUrl}{GetAllContactsEndpoint}")
+            {
+                Timeout = -1
+            };
+            var request = new RestRequest(Method.GET);
+            var credentials2 = Encoding.ASCII.GetBytes($"{UserName}:{Password}");
+            request.AddHeader("Authorization", $"Basic {Convert.ToBase64String(credentials2)}");
+            IRestResponse response = client.Execute(request);
+
+            var allContacts = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Contact>>(response.Content);
+
+            return allContacts;
         }
 
-        public Contact GetContact()
+        public Contact Create()
         {
             throw new NotImplementedException();
         }

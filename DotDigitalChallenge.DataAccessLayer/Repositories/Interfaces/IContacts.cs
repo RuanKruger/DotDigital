@@ -7,7 +7,7 @@ namespace DotDigitalChallenge.DataAccessLayer.Repositories.Interfaces
 {
     public interface IContacts
     {
-        public Contact GetContact();
+        public List<Contact> GetAllContacts();
 
         public Contact Create();
 

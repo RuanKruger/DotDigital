@@ -1,4 +1,6 @@
-﻿<ul class="nav nav-tabs">
+﻿@model DotDigitalChallenge.Models.CampaignViewModel
+
+<ul class="nav nav-tabs">
     <li class="nav-item"><a href="#a" data-toggle="tab">Create</a></li>
     <li class="nav-item"><a href="#b" data-toggle="tab">Send</a></li>
 </ul>
@@ -31,9 +33,66 @@
                 <textarea id="plainTextContent" class="form-control" name="plainTextContent" spellcheck="true"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
+            @if (!string.IsNullOrEmpty(Model.CampaignCreateStatus))
+            {
+                <h4 class="sub-header">Create Status: @Model.CampaignCreateStatus</h4>
+            }
         </form>
     </div>
     <div class="tab-pane fade" id="b">
+        <div class="container">
+            @if (Model.Contacts != null && Model.Contacts.Count() > 0)
+            {
+                <div class="col-xs-6">
+                    <h2 class="sub-header">Existing cotacts</h2>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Id</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var contact in Model.Contacts)
+                                {
+                                    <tr>
+                                        <td>@contact.Email</td>
+                                        <td>@contact.Id</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            }
+            @if (Model.Campaigns != null && Model.Campaigns.Count() > 0)
+            {
+                <div class="col-xs-6">
+                    <h2 class="sub-header">Existing Campaigns</h2>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Id</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var campaign in Model.Campaigns)
+                                {
+                                    <tr>
+                                        <td>@campaign.Name</td>
+                                        <td>@campaign.Id</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            }
+        </div>
+
         <form asp-controller="Campaign" asp-action="SendCampaign" method="post">
             <h2>
                 Send Campaign
@@ -48,9 +107,13 @@
             </div>
             <div class="form-group">
                 <label>Send Date</label>
-                <input class="form-control" type="datetime" name="sendDate" required />
+                <input class="form-control" type="datetime-local" name="sendDate" required />
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
+            @if (!string.IsNullOrEmpty(Model.CampaignSendStatus))
+            {
+                <h4 class="sub-header">Sent Status: @Model.CampaignSendStatus</h4>
+            }
         </form>
     </div>
 </div>

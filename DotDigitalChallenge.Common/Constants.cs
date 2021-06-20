@@ -21,11 +21,15 @@ namespace DotDigitalChallenge.Common
             public const string CreateSingle = "/v2/contacts";
 
             public const string CreateBulk = "/v2/contacts/import";
+
+            public const string GetAll = "/v2/contacts";
         }
 
         public static class Campaigns
         {
             public const string Create = "/v2/campaigns";
+
+            public const string GetAll = "/v2/campaigns";
 
             public const string Send = "/v2/campaigns/send";
 

@@ -1,7 +1,9 @@
 ﻿using DotDigitalChallenge.Common;
+using DotDigitalChallenge.DataAccessLayer.Models;
 using DotDigitalChallenge.DataAccessLayer.Models.Campaign;
 using DotDigitalChallenge.DataAccessLayer.Repositories.Interfaces;
 using Microsoft.Extensions.Configuration;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -18,6 +20,7 @@ namespace DotDigitalChallenge.DataAccessLayer.Repositories
         private readonly string BaseUrl;
         private readonly string CreateEndpoint;
         private readonly string SendEndpoint;
+        private readonly string GetAllEndpoint;
 
         public Campaigns(IConfiguration config)
         {
@@ -27,6 +30,7 @@ namespace DotDigitalChallenge.DataAccessLayer.Repositories
             BaseUrl = _config.GetValue<string>(Constants.AppSettings.BaseUrl);
             CreateEndpoint = Constants.Campaigns.Create;
             SendEndpoint = Constants.Campaigns.Send;
+            GetAllEndpoint = Constants.Campaigns.GetAll;
         }
 
         public System.Net.HttpStatusCode CreateCampaign(CreateCampaignRequest request)
@@ -54,28 +58,10 @@ namespace DotDigitalChallenge.DataAccessLayer.Repositories
             {
                 CampaignId = campaignId,
                 ContactIds = contactIds,
-                SendDate = sendDate,
-                SplitTestOptions = new SplitTestOptions() 
-                {
-                    TestMetric = "Clicks",
-                    TestPercentage = 50,
-                    TestPeriodHours = 10
-                }
+                SendDate = sendDate
             };
 
             var requestToJson = Newtonsoft.Json.JsonConvert.SerializeObject(sendRequest);
-
-            //var content = @"{   
-            //                    campaignId: 1, 
-            //                    contactIds: [1], 
-            //                    sendDate: ""2020-01-01T09:40:18.527Z"", 
-            //                    splitTestOptions: 
-            //                        { 
-            //                            TestMetric: ""Clicks"", 
-            //                            TestPercentage: 50, 
-            //                            TestPeriodHours: 10 
-            //                        } 
-            //                }";
 
             using (var httpClient = new HttpClient())
             {
@@ -85,6 +71,22 @@ namespace DotDigitalChallenge.DataAccessLayer.Repositories
                 var result = httpClient.PostAsync(SendEndpoint, new StringContent(requestToJson, Encoding.UTF8, "application/json")).Result;
                 return result.StatusCode;
             }
+        }
+
+        public List<CampaignResponse> GetAllCampaigns()
+        {
+            var client = new RestClient($"{BaseUrl}{GetAllEndpoint}")
+            {
+                Timeout = -1
+            };
+            var request = new RestRequest(Method.GET);
+            var credentials2 = Encoding.ASCII.GetBytes($"{UserName}:{Password}");
+            request.AddHeader("Authorization", $"Basic {Convert.ToBase64String(credentials2)}");
+            IRestResponse response = client.Execute(request);
+
+            var allContacts = Newtonsoft.Json.JsonConvert.DeserializeObject<List<CampaignResponse>>(response.Content);
+
+            return allContacts;
         }
     }
 }

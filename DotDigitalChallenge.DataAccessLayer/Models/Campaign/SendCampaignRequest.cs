@@ -14,8 +14,8 @@ namespace DotDigitalChallenge.DataAccessLayer.Models.Campaign
         [JsonProperty("sendDate")]
         public DateTime SendDate { get; set; }
 
-        [JsonProperty("splitTestOptions")]
-        public SplitTestOptions SplitTestOptions { get; set; }
+        //[JsonProperty("splitTestOptions")]
+        //public SplitTestOptions SplitTestOptions { get; set; }
     }
 
     

@@ -1,25 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using DotDigitalChallenge.DataAccessLayer.Models.Campaign;
 using DotDigitalChallenge.DataAccessLayer.Repositories.Interfaces;
+using DotDigitalChallenge.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DotDigitalChallenge.Controllers
 {
     public class CampaignController : Controller
     {
-
+        private CampaignViewModel Model;
         private readonly ICampaigns _Campaigns;
+        private readonly IContacts _Contacts;
 
-        public CampaignController(ICampaigns campaigns)
+        public CampaignController(ICampaigns campaigns, IContacts contacts)
         {
             _Campaigns = campaigns;
+            _Contacts = contacts;
+
+            var allContacts = _Contacts.GetAllContacts();
+            var allCampaigns = _Campaigns.GetAllCampaigns();
+
+            Model = new CampaignViewModel()
+            {
+                Contacts = allContacts,
+                Campaigns = allCampaigns
+            };
         }
+
         public IActionResult Index()
         {
-            return View();
+            return View(Model);
         }
 
         [HttpPost]
@@ -39,12 +50,11 @@ namespace DotDigitalChallenge.Controllers
                 PlainTextContent = plainTextContent
             };
 
-            var createCampaign = _Campaigns.CreateCampaign(requestModel);
+            Model.CampaignCreateStatus = _Campaigns.CreateCampaign(requestModel).ToString();
 
-            // update model with status
+            Model.CampaignCreateStatus = _Campaigns.CreateCampaign(requestModel).ToString();
 
-            // return Updated model with successfull upload
-            return View("Index");
+            return View("Index", Model);
         }
 
         [HttpPost]
@@ -52,10 +62,9 @@ namespace DotDigitalChallenge.Controllers
         {
             int[] conIds = contactIds.Split(',').Select(int.Parse).ToArray();
 
-            var sendCampaign = _Campaigns.SendCampaign(campaignId, conIds, sendDate);
+            Model.CampaignSendStatus = _Campaigns.SendCampaign(campaignId, conIds, sendDate).ToString();
 
-            // return Updated model with successfull upload
-            return View("Index");
+            return View("Index", Model);
         }
     }
 }
