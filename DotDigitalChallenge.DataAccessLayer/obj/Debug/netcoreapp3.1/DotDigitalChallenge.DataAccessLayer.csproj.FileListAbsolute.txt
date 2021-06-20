@@ -2,7 +2,6 @@ G:\Local Work\DotDigital\DotDigitalChallenge\DotDigital\DotDigitalChallenge.Data
 G:\Local Work\DotDigital\DotDigitalChallenge\DotDigital\DotDigitalChallenge.DataAccessLayer\obj\Debug\netcoreapp3.1\DotDigitalChallenge.DataAccessLayer.csprojAssemblyReference.cache
 G:\Local Work\DotDigital\DotDigitalChallenge\DotDigital\DotDigitalChallenge.DataAccessLayer\obj\Debug\netcoreapp3.1\DotDigitalChallenge.DataAccessLayer.AssemblyInfoInputs.cache
 G:\Local Work\DotDigital\DotDigitalChallenge\DotDigital\DotDigitalChallenge.DataAccessLayer\obj\Debug\netcoreapp3.1\DotDigitalChallenge.DataAccessLayer.AssemblyInfo.cs
-G:\Local Work\DotDigital\DotDigitalChallenge\DotDigital\DotDigitalChallenge.DataAccessLayer\obj\Debug\netcoreapp3.1\DotDigitalChallenge.DataAccessLayer.csproj.CoreCompileInputs.cache
 G:\Local Work\DotDigital\DotDigitalChallenge\DotDigital\DotDigitalChallenge.DataAccessLayer\bin\Debug\netcoreapp3.1\DotDigitalChallenge.DataAccessLayer.deps.json
 G:\Local Work\DotDigital\DotDigitalChallenge\DotDigital\DotDigitalChallenge.DataAccessLayer\bin\Debug\netcoreapp3.1\DotDigitalChallenge.DataAccessLayer.dll
 G:\Local Work\DotDigital\DotDigitalChallenge\DotDigital\DotDigitalChallenge.DataAccessLayer\bin\Debug\netcoreapp3.1\DotDigitalChallenge.DataAccessLayer.pdb
@@ -10,3 +9,4 @@ G:\Local Work\DotDigital\DotDigitalChallenge\DotDigital\DotDigitalChallenge.Data
 G:\Local Work\DotDigital\DotDigitalChallenge\DotDigital\DotDigitalChallenge.DataAccessLayer\obj\Debug\netcoreapp3.1\DotDigitalChallenge.DataAccessLayer.csproj.CopyComplete
 G:\Local Work\DotDigital\DotDigitalChallenge\DotDigital\DotDigitalChallenge.DataAccessLayer\obj\Debug\netcoreapp3.1\DotDigitalChallenge.DataAccessLayer.dll
 G:\Local Work\DotDigital\DotDigitalChallenge\DotDigital\DotDigitalChallenge.DataAccessLayer\obj\Debug\netcoreapp3.1\DotDigitalChallenge.DataAccessLayer.pdb
+G:\Local Work\DotDigital\DotDigitalChallenge\DotDigital\DotDigitalChallenge.DataAccessLayer\obj\Debug\netcoreapp3.1\DotDigitalChallenge.DataAccessLayer.csproj.CoreCompileInputs.cache

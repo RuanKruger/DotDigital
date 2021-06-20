@@ -94,3 +94,7 @@ G:\Local Work\DotDigital\DotDigitalChallenge\DotDigital\DotDigitalChallenge\bin\
 G:\Local Work\DotDigital\DotDigitalChallenge\DotDigital\DotDigitalChallenge\bin\Debug\netcoreapp3.1\DotDigitalChallenge.DataAccessLayer.dll
 G:\Local Work\DotDigital\DotDigitalChallenge\DotDigital\DotDigitalChallenge\bin\Debug\netcoreapp3.1\DotDigitalChallenge.Common.pdb
 G:\Local Work\DotDigital\DotDigitalChallenge\DotDigital\DotDigitalChallenge\bin\Debug\netcoreapp3.1\DotDigitalChallenge.DataAccessLayer.pdb
+G:\Local Work\DotDigital\DotDigitalChallenge\DotDigital\DotDigitalChallenge\obj\Debug\netcoreapp3.1\Razor\Views\Campaign\Index.cshtml.g.cs
+G:\Local Work\DotDigital\DotDigitalChallenge\DotDigital\DotDigitalChallenge\obj\Debug\netcoreapp3.1\Razor\Views\Contact\Index.cshtml.g.cs
+G:\Local Work\DotDigital\DotDigitalChallenge\DotDigital\DotDigitalChallenge\obj\Debug\netcoreapp3.1\Razor\Views\Report\Index.cshtml.g.cs
+G:\Local Work\DotDigital\DotDigitalChallenge\DotDigital\DotDigitalChallenge\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
