@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using DotDigitalChallenge.DataAccessLayer.Models.Campaign;
 using DotDigitalChallenge.DataAccessLayer.Repositories.Interfaces;
@@ -38,7 +39,7 @@ namespace DotDigitalChallenge.Controllers
         {
             if (string.IsNullOrWhiteSpace(htmlContent))
             {
-                return View("Index");
+                return View("Index", Model);
             }
 
             var requestModel = new CreateCampaignRequest()
@@ -49,8 +50,6 @@ namespace DotDigitalChallenge.Controllers
                 Content = htmlContent,
                 PlainTextContent = plainTextContent
             };
-
-            Model.CampaignCreateStatus = _Campaigns.CreateCampaign(requestModel).ToString();
 
             Model.CampaignCreateStatus = _Campaigns.CreateCampaign(requestModel).ToString();
 
@@ -65,6 +64,12 @@ namespace DotDigitalChallenge.Controllers
             Model.CampaignSendStatus = _Campaigns.SendCampaign(campaignId, conIds, sendDate).ToString();
 
             return View("Index", Model);
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

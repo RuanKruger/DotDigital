@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DotDigitalChallenge.DataAccessLayer.Models
+namespace DotDigitalChallenge.DataAccessLayer.Models.Contact
 {
     public class Contact
     {

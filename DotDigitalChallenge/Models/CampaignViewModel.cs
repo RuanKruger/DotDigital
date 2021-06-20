@@ -1,8 +1,6 @@
 ﻿using DotDigitalChallenge.DataAccessLayer.Models;
-using System;
+using DotDigitalChallenge.DataAccessLayer.Models.Contact;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace DotDigitalChallenge.Models
 {

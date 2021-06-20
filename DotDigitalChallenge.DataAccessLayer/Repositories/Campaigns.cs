@@ -35,7 +35,7 @@ namespace DotDigitalChallenge.DataAccessLayer.Repositories
 
         public System.Net.HttpStatusCode CreateCampaign(CreateCampaignRequest request)
         {
-            // append requered unsubscribe portion TODO: add dynamic functionality
+            // append required unsubscribe portion TODO: add dynamic functionality
             request.Content += $"<a href=\"http://$UNSUB$\" style=\"color: black;\"> Unsubscribe from this newsletter</a>";
             request.PlainTextContent += $"<a href=\"http://$UNSUB$\" style=\"color: black;\"> Unsubscribe from this newsletter</a>";
 

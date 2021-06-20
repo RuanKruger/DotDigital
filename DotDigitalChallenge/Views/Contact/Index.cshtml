@@ -1,7 +1,32 @@
-﻿<form asp-controller="Contact" asp-action="CreateContacts" method="post">
+﻿@model DotDigitalChallenge.Models.ContactViewModel
+
+<form asp-controller="Contact" asp-action="CreateContacts" method="post">
     <div class="form-group">
         <label>Please specify the path of contact csv.</label>
         <input class="form-control" type="text" name="filePath" required />
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+<h2 class="sub-header">Status Checker</h2>
+<form asp-controller="Contact" asp-action="GetContactUploadStatus" method="get">
+    <div class="form-group">
+        <label>Please specify the Id of uploaded request</label>
+        <input class="form-control" type="text" name="id" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<h2 class="sub-header">Result...</h2>
+@if (Model != null && !string.IsNullOrEmpty(Model.UploadQueryId) || !string.IsNullOrEmpty(Model.Status))
+{
+    if (!string.IsNullOrEmpty(Model.UploadQueryId))
+    {
+        <h4 class="sub-header">Upload status for query with ID: @Model.UploadQueryId</h4>
+    }
+
+    if (!string.IsNullOrEmpty(Model.Status))
+    {
+        <h4 class="sub-header">Status: @Model.Status</h4>
+    }
+}

@@ -24,6 +24,12 @@ a {
   border-color: #1861ac;
 }
 
+strong {
+    display: inline-block;
+    width: 140px;
+    text-align: right;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {

@@ -23,6 +23,13 @@ namespace DotDigitalChallenge.Common
             public const string CreateBulk = "/v2/contacts/import";
 
             public const string GetAll = "/v2/contacts";
+
+            public const string GetImportStatus = "/v2/contacts/import";
+        }
+
+        public static class Report
+        {
+            public const string GetSummary = "v2/campaigns/{0}/summary";
         }
 
         public static class Campaigns

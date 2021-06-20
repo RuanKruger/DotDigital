@@ -1,5 +1,15 @@
 ﻿@model DotDigitalChallenge.Models.CampaignViewModel
 
+@if (!string.IsNullOrEmpty(Model.CampaignCreateStatus))
+{
+    <h4 class="sub-header">Campaign Create Status: @Model.CampaignCreateStatus</h4>
+}
+
+@if (!string.IsNullOrEmpty(Model.CampaignSendStatus))
+{
+    <h4 class="sub-header">Campaign Sent Status: @Model.CampaignSendStatus</h4>
+}
+
 <ul class="nav nav-tabs">
     <li class="nav-item"><a href="#a" data-toggle="tab">Create</a></li>
     <li class="nav-item"><a href="#b" data-toggle="tab">Send</a></li>

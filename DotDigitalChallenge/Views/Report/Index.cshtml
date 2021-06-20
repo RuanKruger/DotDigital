@@ -1,3 +1,174 @@
-﻿<div>
-    Report
-</div>
+﻿@model DotDigitalChallenge.DataAccessLayer.Models.Report.ReportResponse
+
+<h2 class="sub-header">Campaign reporting tool</h2>
+<form asp-controller="Report" asp-action="GetCampaignReportById" method="get">
+    <div class="form-group">
+        <label>Campaign Id (You can use campaign page to get id)</label>
+        <input class="form-control" type="text" name="id" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@if (Model != null && Model.CampaignSent)
+{
+    <div class="card">
+        <ul class="list-group list-group-flush ">
+            <li class="list-group-item" style="border: none;">
+                <strong>Date Sent</strong>: @Model.DateSent
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>Num Unique Opens</strong>: @Model.NumUniqueOpens
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>Num Unique Text Opens</strong>: @Model.NumUniqueTextOpens
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Total Unique Opens</strong>: @Model.NumTotalUniqueOpens
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Opens</strong>: @Model.NumOpens
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Text Opens</strong>: @Model.NumTextOpens
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Total Opens</strong>: @Model.NumTotalOpens
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Clicks</strong>: @Model.NumClicks
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Text Clicks</strong>: @Model.NumTextClicks
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Total Clicks</strong>: @Model.NumTotalClicks
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Page Views</strong>: @Model.NumPageViews
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Total Page Views</strong>: @Model.NumTotalPageViews
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Text Page Views</strong>: @Model.NumTextPageViews
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Forwards</strong>: @Model.NumForwards
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Text Forwards</strong>: @Model.NumTextForwards
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Estimated Forwards</strong>: @Model.NumEstimatedForwards
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Text Estimated Forwards</strong>: @Model.NumTextEstimatedForwards
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Total Estimated Forwards</strong>: @Model.NumTotalEstimatedForwards
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Replies</strong>: @Model.NumReplies
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Text Replies</strong>: @Model.NumTextReplies
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Total Replies</strong>: @Model.NumTotalReplies
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Hard Bounces</strong>: @Model.NumHardBounces
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Text Hard Bounces</strong>: @Model.NumTextHardBounces
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Total Hard Bounces</strong>: @Model.NumTotalHardBounces
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Soft Bounces</strong>: @Model.NumSoftBounces
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Text Soft Bounces</strong>: @Model.NumTextSoftBounces
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Total Soft Bounces</strong>: @Model.NumTotalSoftBounces
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Unsubscribes</strong>: @Model.NumUnsubscribes
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Text Unsubscribes</strong>: @Model.NumTextUnsubscribes
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Total Unsubscribes</strong>: @Model.NumTotalUnsubscribes
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Isp Complaints</strong>: @Model.NumIspComplaints
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Text Isp Complaints</strong>: @Model.NumTextIspComplaints
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Total Isp Complaints</strong>: @Model.NumTotalIspComplaints
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Mail Blocks</strong>: @Model.NumMailBlocks
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Text Mail Blocks</strong>: @Model.NumTextMailBlocks
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Total Mail Blocks</strong>: @Model.NumTotalMailBlocks
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Sent</strong>: @Model.NumSent
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Text Sent</strong>: @Model.NumTextSent
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Total Sent</strong>: @Model.NumTotalSent
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Recipients Clicked</strong>: @Model.NumRecipientsClicked
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>num Delivered</strong>: @Model.NumDelivered
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>numText Delivered</strong>: @Model.NumTextDelivered
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>numTotal Delivered</strong>: @Model.NumTotalDelivered
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>percentage Delivered</strong>: @Model.PercentageDelivered
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>percentage Unique Opens</strong>: @Model.PercentageUniqueOpens
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>percentage Opens</strong>: @Model.PercentageOpens
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>percentage Unsubscribes</strong>: @Model.PercentageUnsubscribes
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>percentage Replies</strong>: @Model.PercentageReplies
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>percentage Hard Bounces</strong>: @Model.PercentageHardBounces
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>percentage Soft Bounces</strong>: @Model.PercentageSoftBounces
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>percentage Soft Bounces</strong>: @Model.PercentageSoftBounces
+            </li>
+            <li class="list-group-item" style="border: none">
+                <strong>percentage Clicks To Opens</strong>: @Model.PercentageClicksToOpens
+            </li>
+        </ul>
+    </div>
+}

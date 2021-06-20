@@ -27,9 +27,9 @@ namespace DotDigitalChallenge
         {
             services.AddControllersWithViews();
 
-            //services.AddTransient<ICampaigns>(campaign => new Campaigns(Configuration));
             services.AddTransient<IContacts>(contact => new Contacts(Configuration));
             services.AddTransient<ICampaigns>(contact => new Campaigns(Configuration));
+            services.AddTransient<IReport>(contact => new Report(Configuration));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
